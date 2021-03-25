@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Calculator</title>
+    <link rel="stylesheet" href="D:\Ivan\shapeCalculator\node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-section">
+        <div class="row">
+            <div class="col-xs-4">
+                <h2 class="header-class">Shape Calculator</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-7">
+                <h1 class="col-xs-12 paragraph-heading">Welcome to Shape Calculator</h1>
+                <p class="col-xs-12 paragraph-description">
+                    Shape Calculator is an interactive web application. To the right you will  find the 3 step application. Follow the instructions in each step.  Clicking cancel will take you back to step 1. Enjoy!
+                </p>
+                <p class="col-xs-12 paragraph-content">
+                    A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+                </p>
+                <p class="col-xs-12 paragraph-content">
+                    Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas.
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="form-container">
+                    <form class="row">
+                        <div id="shape-selection-section">
+                            <h4 class="shape-selection-heading col-xs-12">Step 1: Select your shape</h4>
+                            <p class="shape-selection-content col-xs-12">
+                                Please select the shape that you would like to calculate the area of and press the button "Go to step2"
+                            </p>
+                            <div class="col-xs-12">
+                                <input type="radio" id="rectangle" name="shape" value="rectangle" checked>
+                                <label class="shape-selection-options" for="rectangle">Rectangle</label>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <input type="radio" id="circle" name="shape" value="circle">
+                                <label class="shape-selection-options" for="circle">Circle</label>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <input type="radio" id="square" name="shape" value="square">
+                                <label class="shape-selection-options" for="square">Square</label>
+                            </div>
+            
+                            <div class="col-xs-12">
+                                <input type="radio" id="ellipse" name="shape" value="ellipse">
+                                <label class="shape-selection-options" for="ellipse">Ellipse</label>
+                            </div>
+
+                            <div class="col-xs-12 shape-selection-button">
+                                <button type="button" class="btn btn-light col-xs-6" onclick="setShape()">Go to step 2</button>
+                                <button type="button" class="btn btn-link col-xs-6" onclick="window.location.reload()">or Cancel</button>
+                            </div>
+
+                        </div>
+                        <div id="input-value-section">
+                            <h4 class="input-value-heading col-xs-12">Step 2: Insert your values</h4>
+                            <p class="input-value-content col-xs-12">You have selected  a <span id="shape"></span>. Please input the required variables.</p>
+                            <div id="showInputs">
+                                <div id="rectangleContent">
+                                    <div class="col-xs-2 margin-top-bottom-15">
+                                        Length:
+                                    </div>
+                                    <div class="col-xs-10 margin-top-bottom-15">
+                                        <input type="text" id="length" placeholder="Enter the length" />
+                                    </div>
+                                    <div class="col-xs-2 margin-top-bottom-15">
+                                        Width:
+                                    </div>
+                                    <div class="col-xs-10 margin-top-bottom-15">
+                                        <input type="text" id="width" placeholder="Enter the width"/>
+                                    </div>
+                                </div>
+
+                                <div id="circleContent">
+                                    <div class="col-xs-2 margin-top-bottom-15">
+                                        Radius:
+                                    </div>
+                                    <div class="col-xs-10 margin-top-bottom-15">
+                                        <input type="text" id="radius" placeholder="Enter the radius"/>
+                                    </div>
+                                </div>
+
+                                <div id="squareContent">
+                                    <div class="col-xs-2 margin-top-bottom-15">
+                                        Side:
+                                    </div>
+                                    <div class="col-xs-10 margin-top-bottom-15">
+                                        <input type="text" id="side" placeholder="Enter the side" />
+                                    </div>
+                                </div>
+
+                                <div id="ellipseContent">
+                                    <div class="col-xs-2 margin-top-bottom-15">
+                                        Base:
+                                    </div>
+                                    <div class="col-xs-10 margin-top-bottom-15">
+                                        <input type="text" id="base" placeholder="Enter the base"/>
+                                    </div>
+                                    <div class="col-xs-2 margin-top-bottom-15">
+                                        Height:
+                                    </div>
+                                    <div class="col-xs-10 margin-top-bottom-15">
+                                        <input type="text" id="height" placeholder="Enter the height"/>
+                                    </div>
+                                </div> 
+                                
+                            </div>        
+                            <div class="col-xs-12 input-value-button">
+                                <button type="button" class="btn btn-light col-xs-6" onclick="calculateArea()">Calculate Area</button>
+                                <button type="button" class="btn btn-link col-xs-6" onclick="window.location.reload()">or Cancel</button>
+                            </div>
+                        </div>             
+                        <div id="show-result-section">
+                            <h4 class="show-area-heading col-xs-12">Your Results</h4>
+                            <p class="col-xs-12" id="showAreaContent"></p>
+                            <div class="col-xs-12 text-center area-value-content">The Area is <span id="areaValue"></span></div>
+                            <div class="col-xs-12 show-result-button">
+                                <button type="button" class="btn btn-light col-xs-6" onclick="window.location.reload()">Start Over</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+                <img src="images/ad.png"/>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+<script src="scripts.js"></script>
+</html>

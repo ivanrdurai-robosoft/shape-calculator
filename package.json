@@ -1,0 +1,26 @@
+{
+  "name": "shapecalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanrdurai-robosoft/shape-calculator.git"
+  },
+  "keywords": [
+    "shape",
+    "calculator"
+  ],
+  "author": "Ivan R Durai <ivan.durai@robosoftin.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivanrdurai-robosoft/shape-calculator/issues"
+  },
+  "homepage": "https://github.com/ivanrdurai-robosoft/shape-calculator#readme",
+  "dependencies": {
+    "bootstrap": "3.1.1"
+  }
+}
